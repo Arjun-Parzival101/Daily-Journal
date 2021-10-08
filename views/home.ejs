@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+
+    <h1>Home</h1>
+    <p>
+        <%= homeContent %>
+    </p>
+
+    <!-- This Method below will take each element from array one by one and prints it (Contents are not repeated)-->
+    <%posts.forEach(function(post){ %>
+        <h1>
+            <%=post.titleData%>
+                <!-- Printing Paragraph content -->
+        </h1>
+        <p>
+            <%=post.postData.substring(0,100) + " ..."%><a href="/post/<%=post.titleData%>">Read more</a>
+                <!-- Printing Paragraph content -->
+        </p>
+        <%});%>
+            <a href="/compose"><button class="fixedbutton btn btn-lg btn-primary"><i class="fas fa-pencil-alt"></i>Compose</button></a>
+            <%- include("partials/footer"); -%>
